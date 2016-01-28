@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class SkyController : MonoBehaviour {
+
     // PUBLIC INSTANCE VARIABLES
     public float speed = 5f;
 

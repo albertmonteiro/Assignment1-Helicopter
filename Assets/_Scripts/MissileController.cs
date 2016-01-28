@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BirdController : MonoBehaviour {
+public class MissileController : MonoBehaviour {
 
     // PUBLIC INSTANCE VARIABLES
     public float minVerticalSpeed = -2f;
     public float maxVerticalSpeed = 2f;
-    public float minHorizontalSpeed = 5f;
-    public float maxHorizontalSpeed = 8f;
+    public float minHorizontalSpeed = 10f;
+    public float maxHorizontalSpeed = 15;
 
     //PRIVATE INSTANCE VARIABLES
     private Transform _transform;
@@ -29,11 +29,11 @@ public class BirdController : MonoBehaviour {
     void Update()
     {
         this._currentPosition = this._transform.position;
-        this._currentPosition -= new Vector2(this._horizontalSpeed, this._verticalDrift);
-        this._checkBounds();
+        this._currentPosition -= new Vector2(this._horizontalSpeed, 0);
+        //this._checkBounds();
         this._transform.position = this._currentPosition;
 
-        if (this._currentPosition.x <= -345)
+        if (this._currentPosition.x <= -412)
         {
             this.Reset();
         }
@@ -43,24 +43,24 @@ public class BirdController : MonoBehaviour {
     {
         this._verticalDrift = Random.Range(this.minVerticalSpeed, this.maxVerticalSpeed);
         //this._horizontalSpeed = Random.Range(this.minHorizontalSpeed, this.maxHorizontalSpeed);
-        this._horizontalSpeed = Random.Range(5, 8);
-        float yPosition = Random.Range(-225f, 220f);
-        this._checkBounds();
-        this._transform.position = new Vector2(350f, yPosition);
-        Debug.Log("BIRD SPEED: " + this._horizontalSpeed);
+        this._horizontalSpeed = Random.Range(10, 15);
+        float yPosition = Random.Range(-218f, 218f);
+        //this._checkBounds();
+        this._transform.position = new Vector2(412f, yPosition);
+        Debug.Log("MISSILE SPEED: " + this._horizontalSpeed);
     }
 
     private void _checkBounds()
     {
         // check if the plane is going out of bounds and keep it inside window boundary
-        if (this._currentPosition.y < -225)
+        if (this._currentPosition.y < -218)
         {
-            this._currentPosition.y = -225;
+            this._currentPosition.y = -218;
         }
 
-        if (this._currentPosition.y > 220)
+        if (this._currentPosition.y > 218)
         {
-            this._currentPosition.y = 220;
+            this._currentPosition.y = 218;
         }
 
         //if (this._currentPosition.x < -270)
