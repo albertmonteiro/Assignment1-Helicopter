@@ -44,10 +44,11 @@ public class MissileController : MonoBehaviour {
         this._verticalDrift = Random.Range(this.minVerticalSpeed, this.maxVerticalSpeed);
         //this._horizontalSpeed = Random.Range(this.minHorizontalSpeed, this.maxHorizontalSpeed);
         this._horizontalSpeed = Random.Range(10, 15);
+        float xPosition = Random.Range(382f, 1600f);
         float yPosition = Random.Range(-218f, 218f);
         //this._checkBounds();
-        this._transform.position = new Vector2(412f, yPosition);
-        Debug.Log("MISSILE SPEED: " + this._horizontalSpeed);
+        this._transform.position = new Vector2(xPosition, yPosition);
+        //Debug.Log("MISSILE SPEED: " + this._horizontalSpeed);
     }
 
     private void _checkBounds()

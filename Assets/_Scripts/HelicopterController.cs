@@ -66,9 +66,9 @@ public class HelicopterController : MonoBehaviour {
             this._currentPosition.y = -235;
         }
 
-        if (this._currentPosition.y > 220)
+        if (this._currentPosition.y > 197)
         {
-            this._currentPosition.y = 220;
+            this._currentPosition.y = 197;
         }
 
         if (this._currentPosition.x < -270)

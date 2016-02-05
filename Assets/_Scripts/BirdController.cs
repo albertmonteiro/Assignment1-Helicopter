@@ -44,10 +44,11 @@ public class BirdController : MonoBehaviour {
         this._verticalDrift = Random.Range(this.minVerticalSpeed, this.maxVerticalSpeed);
         //this._horizontalSpeed = Random.Range(this.minHorizontalSpeed, this.maxHorizontalSpeed);
         this._horizontalSpeed = Random.Range(5, 8);
+        float xPosition = Random.Range(382f, 1600f);
         float yPosition = Random.Range(-225f, 220f);
         this._checkBounds();
-        this._transform.position = new Vector2(350f, yPosition);
-        Debug.Log("BIRD SPEED: " + this._horizontalSpeed);
+        this._transform.position = new Vector2(xPosition, yPosition);
+        //Debug.Log("BIRD SPEED: " + this._horizontalSpeed);
     }
 
     private void _checkBounds()
