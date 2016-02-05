@@ -23,7 +23,6 @@ public class GameController : MonoBehaviour {
 
         set
         {
-            //Debug.Log("Inside ScoreValue Setter method");
             this._scoreValue = value;
             this.ScoreLabel.text = "Score: " + this._scoreValue;
         }
@@ -38,7 +37,6 @@ public class GameController : MonoBehaviour {
 
         set
         {
-            //Debug.Log("Inside LivesValue Setter method");
             this._livesValue = value;
             if (this._livesValue <= 0)
             {

@@ -27,16 +27,15 @@ public class HelicopterCollider : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Bird"))
         {
-            Debug.Log("Inside OnTriggerEnter2D Bird method");
             this._birdSound.Play();
-            this.gameController.ScoreValue += 100;
+            this.gameController.ScoreValue += 10;
         }
         if (other.gameObject.CompareTag("Missile"))
         {
-            Debug.Log("Inside OnTriggerEnter2D Missile method");
             this._missileSound.Play();
             this.gameController.LivesValue -= 1;
         }
+
     }
 
 }
